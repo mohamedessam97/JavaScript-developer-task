@@ -1,0 +1,42 @@
+.mList{
+    padding: 40px;
+    padding-right: 50px;
+    box-shadow: -10px 0 11px -9px #9d9d9d;
+    background-color: white;
+    height: 100%;
+}
+.mList h3{
+    color: var(--mainColor);
+    margin-bottom: 30px;
+}
+
+
+
+.mList .line{
+    background-color: rgba(195, 195, 195, 0.733);
+    height: 1px;
+    width: 200px;
+    margin-bottom: 30px;
+}
+
+
+.mList span{
+    display: inline-block;
+    background-color: #f3f3f3;
+    cursor: pointer ;
+    padding: 0px 15px;
+    /* padding-right: 72px; */
+    border-radius: 7px;
+    margin-right: 10px;
+    width: 160px;
+}
+
+.mList span  img{
+    width: 25px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    position: relative;
+    top: 19px;
+    margin-left: 10px;
+
+}

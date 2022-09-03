@@ -1,0 +1,23 @@
+#slider{
+    display: inline-block;
+    background-color: var(--mainColor); 
+    height: 30px; 
+    width: 0;
+    border-radius: 30px;
+    
+}
+
+
+#timer{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    color: var(--mainColor);
+
+}
+
+.time{
+    position: relative;
+    width: 750px;
+    margin-bottom: 35px;
+}

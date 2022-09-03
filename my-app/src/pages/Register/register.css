@@ -1,0 +1,84 @@
+.register{
+    margin: 10px auto;
+    box-shadow: 1px 2px 10px -3px black;
+    width: 75%;
+    height: 590px;
+}
+
+
+.register .sign{
+    color: white;
+    background-color: var(--mainColor);
+    padding: 15px 70px;
+    border-radius: 5px;
+    border: 1px solid rgb(160, 160, 160);
+    cursor: pointer;
+    margin-right: 10px;
+
+}
+
+
+.register .sign:hover{
+    background-color: white;
+    color: var(--mainColor);
+    transition: 0.1s ease-in-out;
+
+}
+
+.register .login{
+    background-color: white;
+    padding: 15px 65px;
+    border-radius: 5px;
+    border: 1px solid rgb(160, 160, 160);
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+    color: var(--mainColor);
+}
+.register .login:hover{
+    background-color: var(--mainColor);
+    color: white;
+
+}
+
+
+
+.register .form{
+    padding: 100px 0px 110px 60px
+}
+
+.register .form h1{
+    margin-bottom: 60px;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.register .form input {
+    width: 380px;
+    border: 0;
+    box-shadow:  1px 2px 5px -4px black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 0 !important;
+    margin-left: 0;
+}
+
+.register .form input[type="text"]{
+    width: 180px;
+    margin-right: 20px;
+}
+
+.register .form input[placeholder="Confirm"]{
+    margin-bottom: 60px !important;
+}
+.register .form input:focus{
+    outline: 2px solid var(--mainColor);
+}
+
+.form input{
+    margin: 10px;
+}
+
+
+.register .welcome{
+    padding: 300px 0px 0px 90px
+}
