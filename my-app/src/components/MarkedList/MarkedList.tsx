@@ -3,7 +3,7 @@ import './marked-list.css'
 import delIcon from '../../assets/icons/error-svgrepo-com2.svg'
 import GradContext from "../../store/Context";
 
-function MarkedList({marked , setMarked}:{marked:any[] , setMarked:any}) {
+function MarkedList({marked , setMarked , setIsChecked}:{marked:any[] , setMarked:any , setIsChecked:any})  {
 
   const { setIndex } = useContext(GradContext);
 
@@ -15,6 +15,11 @@ function MarkedList({marked , setMarked}:{marked:any[] , setMarked:any}) {
       setMarked(arr)
     }
 
+    const handleClick =(i:any)=>{
+      setIndex(i);
+      setIsChecked(false);
+      }
+
   return (
     <div className="mList">
             <h3>Marked List</h3>
@@ -24,7 +29,7 @@ function MarkedList({marked , setMarked}:{marked:any[] , setMarked:any}) {
                     if(m){
                         return(
                             <div key={i}>
-                            <span id="${i}" onClick={()=>{setIndex(i)}} >Question {i+1}
+                            <span id="${i}" onClick={()=>handleClick(i)} >Question {i+1}
                             <img className="error" src={delIcon} alt="" onClick={()=>{handleUnMark(i)}}></img>
                             </span>
                             </div>

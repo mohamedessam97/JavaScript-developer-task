@@ -5,7 +5,7 @@ import nextIcon from '../../assets/icons/arrow-circle-right-solid.svg'
 import GradContext from "../../store/Context";
 import './button-control.css'
 
-function ButtonControl({Submit}:{Submit:any}) {
+function ButtonControl({Submit , setIsChecked}:{Submit:any , setIsChecked:any} ) {
 
   const { index, setIndex } = useContext(GradContext);
 
@@ -16,7 +16,7 @@ function ButtonControl({Submit}:{Submit:any}) {
           submit
         </button>
 
-        <button
+        {/* <button
           className="prev"       // button to move to the next question
           onClick={() => {
             if (index > 0) {
@@ -26,7 +26,7 @@ function ButtonControl({Submit}:{Submit:any}) {
         >
           {index ==0 &&<img src={prevIcon} alt="" />}
           {index !=0 &&<img src={prevIcon2} alt="" />}
-        </button>
+        </button> */}
 
         {index+1}
 
@@ -35,6 +35,7 @@ function ButtonControl({Submit}:{Submit:any}) {
           onClick={() => {
             if (index < 9) {
               setIndex(index + 1);
+              setIsChecked(false)
             }
           }}
         >

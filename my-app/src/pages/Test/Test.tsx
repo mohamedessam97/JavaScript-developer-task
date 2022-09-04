@@ -35,6 +35,8 @@ const [list , setList] =useState<any[]>([])
 // state used to store the score of the user 
 const [grad , setGrad] =useState<number>(0)
 
+const [isChecked, setIsChecked] = useState(false);
+
 
 // fetching the api for getting the quetions 
 useEffect(() => {
@@ -43,6 +45,7 @@ useEffect(() => {
             const res = await axios.get("http://localhost:3001/words");
 
             setList(res.data)
+            console.log(res.data);
             
         }
 
@@ -52,7 +55,14 @@ useEffect(() => {
     
     // method used to store the user answer and the right answer
     const answerSelect =(e:any)=>{
-        
+        if(isChecked){
+            alert('You already Answer the Question')
+            return;
+        }
+
+        setIsChecked(true)
+
+
         const arr = [...answer];
         arr[index] = e.target.value;
         setAnswers(arr)
@@ -60,6 +70,21 @@ useEffect(() => {
         const arr2 = [...rightAns]
         arr2[index] =arr[index] === list[index].pos
         setRightAns(arr2)
+
+        if(arr[index] === list[index].pos){
+            alert("Correct Answer");
+        }else{
+            alert("Incorrect Answer");
+        }
+
+
+        const arr3 =[...marked]   // check if the question is marked ot not and if marked and the user answer the question remove the mark 
+        if( arr3[index] ){
+            
+            arr3[index] =false
+
+        }
+        setMarked(arr3)
         
         
     } 
@@ -88,6 +113,10 @@ useEffect(() => {
     const handleMark = () => {
 
         const arr = [...marked]
+        if(isChecked){
+            alert("You Can't mark this quetion , you already answer it")
+            return;
+        }
 
         if( !marked[index] ){
             
@@ -114,11 +143,11 @@ useEffect(() => {
                 {marked[index] && <div><img src={markIcon2}/></div>}
         </div>
         <Question quetion={list[index]}/>
-        <ButtonControl  Submit={Submit}/>
+        <ButtonControl  Submit={Submit} setIsChecked={setIsChecked} />
 
         </Col>
         <Col xs={3}>
-        <MarkedList marked={marked} setMarked={setMarked}/>
+        <MarkedList marked={marked} setMarked={setMarked} setIsChecked={setIsChecked}/>
         </Col>
 
     </Row>
